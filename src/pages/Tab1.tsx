@@ -1,5 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonLabel } from '@ionic/react';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
@@ -7,16 +6,23 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>課題リスト</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+      <IonContent fullscreen  className="ion-padding">
+        <IonList lines="inset">
+          <IonItem>
+            <IonLabel>Item1</IonLabel>
+          </IonItem>
+
+          <IonItem>
+            <IonLabel>Item2</IonLabel>
+          </IonItem>
+
+          <IonItem>
+            <IonLabel>Item3</IonLabel>
+          </IonItem>         
+        </IonList>
       </IonContent>
     </IonPage>
   );
