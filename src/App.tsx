@@ -9,10 +9,11 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import {list, notifications} from 'ionicons/icons'
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import {list, notifications, settings} from 'ionicons/icons';
+
+import TaskListPage from './pages/TaskListPage';
+import NotificationPage from './pages/NotificationPage';
+import SettingPage from './pages/SettingPage'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -37,20 +38,23 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
+        {/* Router */}
         <IonRouterOutlet>
           <Route exact path="/tab1">
-            <Tab1 />
+            <TaskListPage />
           </Route>
           <Route exact path="/tab2">
-            <Tab2 />
+            <NotificationPage />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route exact path="/setting">
+            <SettingPage />
           </Route>
           <Route exact path="/">
             <Redirect to="/tab1" />
           </Route>
         </IonRouterOutlet>
+
+        {/* TabBar */}
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/tab1">
             <IonIcon icon={list} />
@@ -60,9 +64,9 @@ const App: React.FC = () => (
             <IonIcon icon={notifications} />
             <IonLabel>通知</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon="list-outline" />
-            <IonLabel>Tab 3</IonLabel>
+          <IonTabButton tab="tab3" href="/setting">
+            <IonIcon icon={settings} />
+            <IonLabel>設定</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

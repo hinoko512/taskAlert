@@ -1,0 +1,13 @@
+.container {
+  padding:10px;
+}
+
+.limit {
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.name {
+  font-size: 30px;
+}
